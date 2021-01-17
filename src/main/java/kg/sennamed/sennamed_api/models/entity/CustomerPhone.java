@@ -6,15 +6,17 @@ import javax.persistence.*;
 
 @Data
 @Entity
-public class UserPhone {
+@Table(name = "customers_phone")
+public class CustomerPhone {
 
     @Id
     @GeneratedValue
-    @Column(name = "user_phone_id")
+    @Column(name = "customer_phone_id")
     private Long id;
     private String phoneNum;
+    private boolean isActive;
 
     @ManyToOne
-    @JoinColumn (name="user_id")
-    private User user;
+    @JoinColumn (name="customer_id")
+    private Customer customer;
 }
