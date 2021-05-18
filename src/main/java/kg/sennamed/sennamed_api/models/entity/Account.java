@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Account {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "account_id")
     private Long id;
     private String login;

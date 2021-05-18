@@ -1,5 +1,6 @@
 package kg.sennamed.sennamed_api.models.entity;
 
+import kg.sennamed.sennamed_api.models.enums.Role;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,7 +11,7 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name = "user_id")
     private Long id;
 
@@ -18,12 +19,13 @@ public class User {
     private String name;
     private String address;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne//(fetch = FetchType.EAGER)
     @JoinColumn(name = "account_id")
     private Account account;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    /*@OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "position_id")
-    private Position position;
+    private Position position;*/
+    private Role role;
 
 }

@@ -26,9 +26,9 @@ public class MedicalHistory {
     @JsonFormat(pattern = "dd.MM.yyyy")
     private Date dateOfAappointment;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+/*    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
-    private User createdUser;
+    private User createdUser;*/
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
